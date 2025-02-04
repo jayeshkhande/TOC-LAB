@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        .abbreviations {
+            margin-top: 20px;
+        }
+        
+        .abbreviations h3 {
+            margin-bottom: 10px;
+        }
+        
+        .abbreviations ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .abbreviations li {
+            margin-bottom: 5px;
+        }
+        
+        .inst {
+            margin-left: 600px;
+            margin-top: -300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Weekly Timetable</h2>
+
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td>Time</td>
+                <td>10.15-11.15</td>
+                <td>11.15-12.15</td>
+                <td>12.15-1.15</td>
+                <td>1.15-2.00</td>
+                <td>2.00-3.00</td>
+                <td>3.00-4.00</td>
+                <td>4.00-5.00</td>
+            </tr>
+            <tr>
+                <td>Mon</td>
+                <td>CAO<br>DBN</td>
+                <td colspan="2">B1/PP/OOPL/SRK<br>B2/CWS-1/DBMSL/PBA</td>
+
+                <td rowspan="6">RECESS</td>
+                <td>TOC<br>PBA</td>
+                <td>NPTEL<br>PPN</td>
+                <td>Library</td>
+            </tr>
+            <tr>
+                <td>Tue</td>
+                <td colspan="2">B2/PP/OOPL/SRK<br>B1/CWS-1/DBMSL/PBA</td>
+                <td>MDM</td>
+
+                <td>AEC-ETC<br>PS</td>
+                <td>Technical Exposure<br>TSP</td>
+                <td>Library</td>
+            </tr>
+            <tr>
+                <td>Wed</td>
+                <td>EDM<br>AM</td>
+                <td>PP <br> SRK</td>
+                <td>MDM</td>
+
+                <td>CAO<br>DBN</td>
+                <td>DTS<br>PVR</td>
+                <td>Library</td>
+            </tr>
+            <tr>
+                <td>Thu</td>
+                <td>TOC<br>PBA</td>
+                <td>PP <br> SRK</td>
+                <td>Open Elective</td>
+
+                <td>CAO<br>DBN</td>
+                <td>NPTEL<br>SPT</td>
+                <td>Library</td>
+            </tr>
+            <tr>
+                <td>Fri</td>
+                <td>DTS<br>PVR</td>
+                <td>TOC <br>PBA</td>
+                <td>Open Elective</td>
+
+                <td>AEC-ETC<br>PS</td>
+                <td>PP<br>SRK</td>
+                <td>EDM <br> AM</td>
+            </tr>
+            <tr>
+                <td>Sat</td>
+                <td colspan="3">Technical Exposure</td>
+                <td colspan="3"></td>
+            </tr>
+        </tbody>
+    </table>
+<div class="abbreviations">
+
+
+
+<h3>Abbreviations:</h3>
+  <ul>
+      <li>PP - Python Programming</li>
+      <li>PPL - Python Programming Lab</li>
+      <li>CAO - Computer Architecture and Organization</li>
+      <li>TOC - Theory of Computation</li>
+      <li>AEC-ETC - Ability Enhancement Course-Effective Technical Communication</li>
+      <li>EDM - Entrepreneurship Development Management</li>
+      <li>DTS - Digital and Technological Solution</li>
+      <li>CWS-I - Computer Workshop-I</li>
+      <li>NPTEL - NPTEL</li>
+      <li>TE - Technical Exposure</li>
+      <li>OOPL - Object-Oriented Programming Lab</li>
+      <li>DBMSL - Database Management System Lab</li>
+  </ul>
+<div class="inst">
+
+  <ul>
+     <li>SRK: Er.S.R.Kolte</li>
+     <li>SRK: Er.S.R.Kolte</li>
+     <li>DBN: Er.D.B.Nimje</li>
+     <li>PBA: Er.P.B.Aher</li>
+     <li>PS: Er.Padmja Singh</li>
+     <li>AM: Er.Avinash Mangle</li>
+     <li>PVR: Er.P.V.Rathod</li>
+     <li>PBA: Er.P.B.Aher</li>
+     <li>SPT: Er.S.P.Tete</li>
+     <li>TSP: Er.T.S.Palorkar</li>
+  </ul>
+  </div>
+
+</div>     
+</body>
+</html>

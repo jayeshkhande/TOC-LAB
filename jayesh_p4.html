@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Tabs Example with Header</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            /* Full height of the viewport */
+        }
+        
+        .header {
+            height: 25%;
+            /* 25% of the viewport height */
+            background-color: #4CAF50;
+            /* Header background color */
+            color: white;
+            /* Header text color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            /* Header font size */
+        }
+        
+        .main {
+            display: flex;
+            flex-grow: 1;
+            /* Take up remaining space */
+        }
+        
+        .sidebar {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sidebar h2 {
+            text-align: center;
+        }
+        
+        .tab {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e7e7e7;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .tab:hover {
+            background-color: #d4d4d4;
+        }
+        
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            border-left: 1px solid #ccc;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>PJLCE Web Page</h1>
+    </div>
+
+    <div class="main">
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <div class="tab" onclick="showContent('home')">Home</div>
+            <div class="tab" onclick="showContent('login')">Login</div>
+            <div class="tab" onclick="showContent('catalog')">Book Catalog</div>
+        </div>
+
+        <div class="content">
+            <div id="home" class="tab-content">
+                <h1>Welcome to the Homepage</h1>
+                <p>Priyadarshini J.L. College of Engineering (PJLCE) is an autonomous institution located in Nagpur, Maharashtra, affiliated with Rashtrasant Tukadoji Maharaj Nagpur University. Established in 2008, the college has earned several prestigious
+                    certifications, including ISO 9001:2015 for Quality Management, ISO 14001:2015 for Environmental Management, and ISO 50001:2018 for Energy Management. Additionally, it holds an 'A' grade accreditation from the National Assessment and
+                    Accreditation Council (NAAC). PJLCE.EDU.IN Academic Programs: PJLCE offers a range of undergraduate and postgraduate programs in engineering and technology: Undergraduate Programs: Bachelor of Engineering (B.E.) in: Computer Science
+                    and Engineering Artificial Intelligence Electronics and Telecommunication Engineering Electrical Engineering Civil Engineering Mechanical Engineering Postgraduate Programs: Master of Engineering (M.E.) in: Chemical Engineering Industrial
+                    Drive & Control VLSI Design Design Engineering Defence Technology Infrastructure and Facilities: The college boasts a lush green campus equipped with modern amenities: Academic Facilities: Well-ventilated, spacious classrooms State-of-the-art
+                    laboratories and workshops Drawing halls Fully air-conditioned conference rooms Student Amenities: Independent cafeteria and coffee shop Medical room Common rooms for boys and girls Enormous parking areas Additional Facilities: Auditorium
+                    and seminar halls Computer center with Wi-Fi access Sports facilities Well-equipped library with multimedia facilities Accreditations and Recognitions: PJLCE has achieved several notable accreditations: ISO Certifications: ISO 9001:2015
+                    for Quality Management ISO 14001:2015 for Environmental Management ISO 50001:2018 for Energy Management NAAC Accreditation: Accredited with 'A' grade Campus Life and Extracurricular Activities: The college fosters a vibrant campus
+                    life with various extracurricular activities: Cultural Events: Annual events like 'Jigyasa' featuring national-level paper presentations, poster presentations, and project exhibitions Biennial cultural fest 'Ashwamedh' with competitions
+                    in dancing, singing, and drama Technical Events: 'Technologia' – a technical event showcasing innovations 'Udaan' – a sports event promoting physical fitness Student Forums: 'Tuning Fork' – a cultural club for students to showcase
+                    talents Department-specific forums like 'SCOoP' for Computer Technology and 'EESF' for Electrical Engineering Hostel Facilities: While the college does not provide on-campus hostel facilities, students from outstation can avail accommodations
+                    through the parent organization, Lokmanya Tilak Jankalyan Shikshan Sanstha, or opt for nearby private hostels and rented accommodations. COLLEGEDUNIA.COM Contact Information: Address: Priyadarshini J.L. College of Engineering 846,
+                    New Nandanvan Colony, Nandanvan, Nagpur, Maharashtra 440009 Phone: +91 7276010186 +91 9860979436 +91 9923588403 +91 9421941930 +91 9850506287 Email: pjlceofficial@gmail.com For more detailed information, you can visit the official
+                    website: PJLCE.EDU.IN Sources
+
+
+                </p>
+            </div>
+            <div id="login" class="tab-content hidden">
+                <h1>Login</h1>
+                <p>Please enter your credentials to log in.</p>
+                <form>
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username"><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br><br>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+            <div id="catalog" class="tab-content hidden">
+                <h1>Book Catalog</h1>
+                <p>Here is a list of available books.</p>
+                <ul>
+                    <li>Book 1 : Pyhton</li>
+                    <li>Book 2 : Java</li>
+                    <li>Book 3 : computer architecture</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(tab) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Show the selected tab content
+            const selectedContent = document.getElementById(tab);
+            selectedContent.classList.remove('hidden');
+        }
+    </script>
+
+</body>
+
+</html>

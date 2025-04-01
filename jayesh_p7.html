@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required>
+        <span class="error" id="firstNameError"></span><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required>
+        <span class="error" id="lastNameError"></span><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <span class="error" id="passwordError"></span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <span class="error" id="emailError"></span><br><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" required>
+        <span class="error" id="mobileError"></span><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" required></textarea>
+        <span class="error" id="addressError"></span><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Clear previous error messages
+            document.querySelectorAll('.error').forEach(function(error) {
+                error.textContent = '';
+            });
+
+            // Validate fields
+            let isValid = true;
+
+            // Validate First Name
+            const firstName = document.getElementById('firstName').value;
+            if (!/^[A-Za-z]+$/.test(firstName) || firstName.length > 6) {
+                document.getElementById('firstNameError').textContent = 'First name must contain only alphabets and cannot be more than 6 characters.';
+                isValid = false;
+            }
+
+            // Validate Last Name
+            const lastName = document.getElementById('lastName').value;
+            if (lastName.trim() === '') {
+                document.getElementById('lastNameError').textContent = 'Last name cannot be empty.';
+                isValid = false;
+            }
+
+            // Validate Password
+            const password = document.getElementById('password').value;
+            if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';
+                isValid = false;
+            }
+
+            // Validate Email
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format.';
+                isValid = false;
+            }
+
+            // Validate Mobile Number
+            const mobile = document.getElementById('mobile').value;
+            if (!/^\d{10}$/.test(mobile)) {
+                document.getElementById('mobileError').textContent = 'Mobile number must be exactly 10 digits.';
+                isValid = false;
+            }
+
+            // Validate Address
+            const address = document.getElementById('address').value;
+            if (address.trim() === '') {
+                document.getElementById('addressError').textContent = 'Address cannot be empty.';
+                isValid = false;
+            }
+
+            // If all validations pass
+            if (isValid) {
+                alert('Registration successful!');
+                // Here you can submit the form or perform further actions
+                // document.getElementById('registrationForm').submit();
+            }
+        });
+    </script>
+</body>
+</html>

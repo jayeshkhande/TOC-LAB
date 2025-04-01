@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Popup Demonstration</title>
+    <script>
+        // Function to display the current date
+        function displayDate() {
+            const currentDate = new Date();
+            document.getElementById('dateOutput').value = currentDate.toString();
+        }
+
+        // Function to calculate factorial
+        function calculateFactorial() {
+            const number = prompt("Enter a number to calculate its factorial:");
+            if (number !== null) {
+                const n = parseInt(number);
+                if (isNaN(n) || n < 0) {
+                    alert("Please enter a valid non-negative integer.");
+                    return;
+                }
+                let factorial = 1;
+                for (let i = 1; i <= n; i++) {
+                    factorial *= i;
+                }
+                alert(`The factorial of ${n} is ${factorial}.`);
+            }
+        }
+
+        // Function to display multiplication table
+        function multiplicationTable() {
+            const number = prompt("Enter a number to see its multiplication table:");
+            if (number !== null) {
+                const n = parseInt(number);
+                if (isNaN(n)) {
+                    alert("Please enter a valid number.");
+                    return;
+                }
+                let result = '';
+                for (let i = 1; i <= 10; i++) {
+                    result += `${n} x ${i} = ${n * i}\n`;
+                }
+                alert(result);
+            }
+        }
+
+        // Function to sum numbers
+        function sumNumbers() {
+            const firstNumber = prompt("Enter the first number:");
+            if (firstNumber !== null) {
+                const n = parseFloat(firstNumber);
+                if (isNaN(n)) {
+                    alert("Please enter a valid number.");
+                    return;
+                }
+                const secondNumber = prompt("Enter another number to add:");
+                if (secondNumber !== null) {
+                    const m = parseFloat(secondNumber);
+                    if (isNaN(m)) {
+                        alert("Please enter a valid number.");
+                        return;
+                    }
+                    const sum = n + m;
+                    alert(`The sum of ${n} and ${m} is ${sum}.`);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript Popup Demonstration</h1>
+
+    <h2>1. Display Current Date</h2>
+    <button onclick="displayDate()">Display Date</button>
+    <input type="text" id="dateOutput" readonly>
+
+    <h2>2. Calculate Factorial</h2>
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+
+    <h2>3. Multiplication Table</h2>
+    <button onclick="multiplicationTable()">Show Multiplication Table</button>
+
+    <h2>4. Sum of Two Numbers</h2>
+    <button onclick="sumNumbers()">Sum Two Numbers</button>
+</body>
+
+</html>

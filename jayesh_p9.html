@@ -1,0 +1,15 @@
+<?php
+// Set the default timezone (you can change this to your preferred timezone)
+date_default_timezone_set('America/New_York'); // Change to your timezone
+
+// Get the current date, time, and day
+$currentDate = date('Y-m-d'); // Format: YYYY-MM-DD
+$currentTime = date('H:i:s'); // Format: HH:MM:SS
+$currentDay = date('l'); // Full textual representation of the day of the week
+
+// Display the current date, time, and day
+echo "<h1>Current Date and Time</h1>";
+echo "<p><strong>Date:</strong> " . $currentDate . "</p>";
+echo "<p><strong>Time:</strong> " . $currentTime . "</p>";
+echo "<p><strong>Day:</strong> " . $currentDay . "</p>";
+?>
